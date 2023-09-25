@@ -1,6 +1,6 @@
 id: com.gitlab.adnan338.Nixwriter
 runtime: org.gnome.Platform
-runtime-version: "42"
+runtime-version: "45"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
