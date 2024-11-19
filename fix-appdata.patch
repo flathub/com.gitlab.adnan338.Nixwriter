@@ -1,0 +1,60 @@
+From e513e326111a94a2f1949c5848b17f8d0eb73157 Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Wed, 20 Nov 2024 15:59:33 +0300
+Subject: [PATCH] Fix appdata papercuts
+
+Fix some issues.
+---
+ resources/com.gitlab.adnan338.Nixwriter.desktop      | 4 ++--
+ resources/com.gitlab.adnan338.Nixwriter.metainfo.xml | 6 ++++--
+ 2 files changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/resources/com.gitlab.adnan338.Nixwriter.desktop b/resources/com.gitlab.adnan338.Nixwriter.desktop
+index 790b086..5780f00 100644
+--- a/resources/com.gitlab.adnan338.Nixwriter.desktop
++++ b/resources/com.gitlab.adnan338.Nixwriter.desktop
+@@ -1,11 +1,11 @@
+ [Desktop Entry]
+ Type=Application
+ Name=Nixwriter
+-Verson=3.5.0
++Categories=Utility;
+ Comment=Create bootable Linux images with a GTK user interface
+ Terminal=false
+ # the `.svg` is actually necessary for snaps 
+ # while it's not encouraged not to use extensions 
+ # in desktop files
+ Icon=com.gitlab.adnan338.Nixwriter
+-Exec=nixwriter
+\ No newline at end of file
++Exec=nixwriter
+diff --git a/resources/com.gitlab.adnan338.Nixwriter.metainfo.xml b/resources/com.gitlab.adnan338.Nixwriter.metainfo.xml
+index c17884f..8c34c50 100644
+--- a/resources/com.gitlab.adnan338.Nixwriter.metainfo.xml
++++ b/resources/com.gitlab.adnan338.Nixwriter.metainfo.xml
+@@ -12,12 +12,14 @@
+     <release version="3.0.0" date="2020-12-22" />
+   </releases>
+   <url type="homepage">https://gitlab.com/9898287/nixwriter</url>
++  <url type="bugtracker">https://gitlab.com/9898287/nixwriter/-/issues</url>
++  <url type="vcs-browser">https://gitlab.com/9898287/nixwriter</url>
+   <description>
+     <p>
+       Create bootable Linux images with a simple GTK based user interface
+     </p>
+   </description>
+-  
++  <developer_name>adnan338</developer_name>
+   <launchable type="desktop-id">com.gitlab.adnan338.Nixwriter.desktop</launchable>
+   <screenshots>
+     <screenshot type="default">
+@@ -30,4 +32,4 @@
+       <image>https://i.imgur.com/l8MJuCW.png</image>
+     </screenshot>
+   </screenshots>
+-</component>
+\ No newline at end of file
++</component>
+--
+libgit2 1.7.2
+
