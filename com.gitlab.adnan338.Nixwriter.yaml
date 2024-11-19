@@ -28,6 +28,8 @@ modules:
         url: https://gitlab.com/9898287/nixwriter
         tag: "3.5.0"
         commit: "d76697136f4d686224cac5a7c148fe19421e4cf0"
+      - type: patch
+        path: fix-appdata.patch
       - deptree.json
     buildsystem: simple
     build-commands:
