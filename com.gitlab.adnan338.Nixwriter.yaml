@@ -1,7 +1,7 @@
 id: com.gitlab.adnan338.Nixwriter
-runtime: org.gnome.Platform
-runtime-version: "49"
-sdk: org.gnome.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: "26.08"
+sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
 command: nixwriter
@@ -20,21 +20,21 @@ build-options:
 
 modules:
   - name: nixwriter
+    buildsystem: simple
+    build-commands:
+      - cargo --offline build --release --verbose
+      - install -Dm755 target/release/nixwriter -t /app/bin
+      - install -Dm644 resources/${FLATPAK_ID}.desktop -t /app/share/applications
+      - install -Dm644 resources/${FLATPAK_ID}.svg -t /app/share/icons/hicolor/scalable/apps
+      - install -Dm644 resources/${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo
     sources:
       #For development purposes
       # - type: dir
       #   path: "."
       - type: git
         url: https://gitlab.com/9898287/nixwriter
-        tag: "3.5.0"
-        commit: "d76697136f4d686224cac5a7c148fe19421e4cf0"
+        tag: 3.5.0
+        commit: d76697136f4d686224cac5a7c148fe19421e4cf0
       - type: patch
         path: fix-appdata.patch
       - deptree.json
-    buildsystem: simple
-    build-commands:
-      - cargo --offline build --release --verbose
-      - install -Dm755 target/release/nixwriter --target-directory=/app/bin
-      - install -Dm644 resources/com.gitlab.adnan338.Nixwriter.desktop --target-directory=/app/share/applications
-      - install -Dm644 resources/com.gitlab.adnan338.Nixwriter.svg --target-directory=/app/share/icons/hicolor/scalable/apps
-      - install -Dm644 resources/com.gitlab.adnan338.Nixwriter.metainfo.xml --target-directory=/app/share/metainfo
